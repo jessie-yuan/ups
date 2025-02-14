@@ -192,25 +192,251 @@
   </div>
 </section>
 
-
 <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-     
-		<div class="item item-steve">
+	<div class="hero-body">
+	  <div class="container">
+		<div id="results-carousel" class="carousel results-carousel">
+		  
+		  
+		  
+		  
+			
+			
+		<div  class="slider" tabindex="0">
+<div class="slider-container" style="opacity: 1;  transition: 600ms; ">
+
+			</div></div><div class="slider-item is-current" data-slider-index="0" style="width: 300px;"><div class="item-5">
+				<video poster="" id="1" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+					<source src="./static/videos/real_world_results/cup_handle/base_policy.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p>
+					  Task Description: "serve the cup of water to the guest"<br>
+					  Implied Behavior: grasp the cup by the handle 
+					  Unsteered Policy: Diffusion Policy (Base Policy)
+					</p>
+					<p style="color: red">Failure</p>
+				</div>
+			</div></div><div class="slider-item is-slide-next" data-slider-index="1" style="width: 300px;" ><div class="item-6">
+				<video poster="" id="2" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+					<source src="./static/videos/real_world_results/cup_handle/forewarn.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p>
+						Task Description: "serve the cup of water to the guest."<br>
+						Implied Behavior: grasp the cup by the handle <br>
+						Steered Policy: FOREWARN (Ours)
+					</p>
+					<p style="color: green">Success</p>
+				</div>
+			</div></div><div class="is-slide-previous" data-slider-index="2" style="width: 300px;" >
+				<div class="item-1">
+			<video poster="" id="3" controls="" muted="" loop=""  autoplay playsinline="" height="50%">
+				<source src="./static/videos/real_world_results/cup_rim/base_policy.mp4" type="video/mp4">
+			</video>
+			<div class="video-overlay">
+				<p>
+					Task Description: "The handle is covered with oil."<br>
+					Implied Behavior: grasp the cup by the rim <br>
+					Unsteered Policy: Diffusion Policy (Base Policy)
+				  </p>
+				  <p style="color: red">Failure</p>
+			</div>
+		  </div></div><div class="slider-item" data-slider-index="3" data-cloned="true" style="width: 300px;"><div class="item-2">
+			  <video poster="" id="4" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: "The handle is covered with oil."<br>
+					Implied Behavior: grasp the cup by the rim <br>
+					Steered Policy: FOREWARN (Ours)
+					</p>
+				  </p>
+				  <p style="color: green">Success</p>
+			  </div>
+		  </div></div><div class="slider-item" data-slider-index="4" data-cloned="true" style="width: 300px;" ><div class="item-3">
+			  <video poster="" id="5" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/real_world_results/bag_edge/base_policy.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: "minimize the contact region to avoid crushing contents inside"<br>
+					Implied Behavior: grasp the bag via the edge<br>
+					Unsteered Policy: Diffusion Policy (Base Policy)
+				  </p>
+				  <p style="color: red">Failure</p>
+			  </div>
+		  
+		  </div></div><div class="slider-item" data-slider-index="5" data-cloned="true" style="width: 300px;" ><div class="item-4">
+			  <video poster="" id="6" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/real_world_results/bag_edge/forewarn.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: "minimize the contact region to avoid crushing contents inside"<br>
+					Implied Behavior: grasp the bag via the edge<br>
+					Steered Policy: FOREWARN (Ours)
+				  </p>
+				  <p style="color: green">Success</p>
+			  </div>
+		  </div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 300px;"><div class="item-5">
+			  <video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+				  <source src="./static/videos/real_world_results/bag_middle/base_policy.mp4" type="video/mp4">
+			  </video>
+			  <div class="video-overlay">
+				  <p>
+					Task Description: "maximize the stability without dropping the bag"<br>
+					Implied Behavior: grasp the bag via the middle part<br>
+					Unsteered Policy: Diffusion Policy (Base Policy)
+				  </p>
+				  <p style="color: red">Failure</p>
+				  
+			  </div>
+			</div></div><div class="slider-item" data-slider-index="6" data-cloned="true" style="width: 300px;"><div class="item-5">
+				<video poster="" id="7" controls="" muted="" loop="" autoplay playsinline="" height="50%">
+					<source src="./static/videos/real_world_results/bag_middle/forewarn.mp4" type="video/mp4">
+				</video>
+				<div class="video-overlay">
+					<p>
+					  Task Description: "maximize the stability without dropping the bag"<br>
+					  Implied Behavior: grasp the bag via the middle part<br>
+					  Steered Policy: FOREWARN (Ours)
+					</p>
+					<p style="color: green">Success</p>
+					
+				</div>
+		  </div></div></div>
+<!-- <div class="slider-navigation-previous">
+	<svg viewBox="0 0 50 80" xml:space="preserve">
+<polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 ">
+
+</polyline>
+</svg>
+</div>
+<div class="slider-navigation-next"><svg viewBox="0 0 50 80" xml:space="preserve">
+<polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 ">
+
+</polyline>
+</svg>
+</div>
+<div class="slider-pagination">
+	<div class="slider-page" data-index="0">
+
+	</div>
+	<div class="slider-page" data-index="1">
+
+</div>
+<div class="slider-page" data-index="2"></div><div class="slider-page" data-index="3">
+
+</div>
+<div class="slider-page" data-index="4">
+
+</div>
+<div class="slider-page is-active" data-index="5">
+
+</div> -->
+</div></div></div>
+	  </div>
+	</div>
+  </section>
+
+
+		<!-- <div class="slider" tabindex="0">
+			<div class="slider-container" style="opacity: 1; width: 7809px; transition: 300ms; transform: translate3d(-3715px, 0px, 0px);">
+				<div class="slider-item" data-slider-index="-4" data-cloned="true" style="width: 411px;">
+					<div class="item-3">
+	
           <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
             <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
                     type="video/mp4">
+					
           </video>
+		  <div class="video-overlay">
+			<p>
+			  Task: "place the carrot on yellow plate"<br>
+			  Scenario: object distractors <br>
+			  Policy: Octo-Base <b>with BYOVLA</b>
+			</p>
+			<p style="color: green">Success</p>
+		</div>
         </div>
-        <div class="item item-chair-tp">
+		</div>
+
+		
+				<div class="slider-item" data-slider-index="-3" data-cloned="true" style="width: 411px;">
+					<div class="item-4">
+	
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
+            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
+                    type="video/mp4">
+					
+          </video>
+		  <div class="video-overlay">
+			<p>
+			  Task: "place the carrot on yellow plate"<br>
+			  Scenario: object distractors <br>
+			  Policy: Octo-Base <b>with BYOVLA</b>
+			</p>
+			<p style="color: green">Success</p>
+		</div>
+        </div>
+		</div>
+	
+		
+				<div class="slider-item" data-slider-index="-2" data-cloned="true" style="width: 411px;">
+					<div class="item-5">
+	
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
+            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
+                    type="video/mp4">
+					
+          </video>
+		  <div class="video-overlay">
+			<p>
+			  Task: "place the carrot on yellow plate"<br>
+			  Scenario: object distractors <br>
+			  Policy: Octo-Base <b>with BYOVLA</b>
+			</p>
+			<p style="color: green">Success</p>
+		</div>
+        </div>
+		</div>
+		
+		
+				<div class="slider-item" data-slider-index="-1" data-cloned="true" style="width: 411px;">
+					<div class="item-6">
+	
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="50%">
+            <source src="./static/videos/real_world_results/cup_handle/forewarn.mp4"
+                    type="video/mp4">
+					
+          </video>
+		  <div class="video-overlay">
+			<p>
+			  Task: "place the carrot on yellow plate"<br>
+			  Scenario: object distractors <br>
+			  Policy: Octo-Base <b>with BYOVLA</b>
+			</p>
+			<p style="color: green">Success</p>
+		</div>
+        </div>
+		</div>
+		</div>
+		</div> -->
+         <!-- <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="50%">
             <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item item-shiba">
+        </div> -->
+		<!-- <div class="item item-chair-tp">
+			<video poster="" id="chair-tp" autoplay controls muted loop playsinline height="50%">
+			  <source src="./static/videos/real_world_results/cup_rim/forewarn.mp4"
+					  type="video/mp4">
+			</video>
+		  </div> -->
+        <!--<div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="50%">
             <source src="./static/videos/real_world_results/bag_edge/forewarn.mp4"
                     type="video/mp4">
@@ -221,13 +447,13 @@
             <source src="./static/videos/real_world_results/bag_middle/forewarn.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
     
         
-      </div>
+      <!-- </div>
     </div>
-  </div>
-</section>
+  </div> -->
+
 
 <!-- <section class="section">
 	<div class="container is-fluid">
