@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment">
-  <meta name="keywords" content="FOREWARN">
+        content="When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering">
+  <meta name="keywords" content="UPS">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FOREWARN</title>
+  <title>Uncertainty-Aware Policy Steering</title>
+  <link rel="shortcut icon" href="./static/images/robot.png">
   
   <script>
 	window.dataLayer = window.dataLayer || [];
@@ -128,16 +129,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">From Foresight to Forethought: VLM-In-the-Loop Policy Steering via Latent Alignment</h1>
-          <h1 class="title is-5 publication-title">RSS 2025</h1>
+          <h1 class="title is-1 publication-title">When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering</h1>
+          <h1 class="title is-5 publication-title">In Submission</h1>
 		  <div class="is-size-5 publication-authors">
 			<span class="author-block">
-				<a href="https://yilin-wu98.github.io/">Yilin Wu</a><sup>1</sup>,</span>
-				<span class="author-block">
-				<a href="https://thomasrantian.github.io/">Ran Tian</a><sup>2</sup>,</span>
-				<span class="author-block">
-				<a href="https://gokul.dev/">Gokul Swamy</a><sup>1</sup>,
-				</span>
+				<a href="https://jessie-yuan.github.io/">Jessie Yuan</a><sup>1*</sup>,</span>
+			<span class="author-block">
+				<a href="https://yilin-wu98.github.io/">Yilin Wu</a><sup>1*</sup>,</span>
 				<span class="author-block">
 				<a href="https://www.cs.cmu.edu/~abajcsy/">Andrea Bajcsy</a><sup>1</sup>
 				</span>
@@ -146,7 +144,6 @@
 
           <div class="is-size-10 publication-authors">
             <span class="author-block"><sup>1</sup>Carnegie Mellon University   </span>
-            <span class="author-block"><sup>2</sup>  UC Berkeley</span>
           </div>
 
 		  <div class="column has-text-centered">
@@ -180,8 +177,8 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
-      <video id="teaser" autoplay muted loop playsinline width="70%">
-        <source src="./static/videos/front_video_v2.mp4"
+      <video id="teaser" controls autoplay muted loop playsinline width="70%">
+        <source src="./static/videos/overall_vid.mp4"
                 type="video/mp4">
       </video>
 		<br>
@@ -202,7 +199,7 @@
 		  
 			
 			
-		<div  class="slider" tabindex="0">
+		<!-- <div  class="slider" tabindex="0">
 <div class="slider-container" style="opacity: 1;  transition: 600ms; ">
 
 			</div></div><div class="slider-item is-current" data-slider-index="0" style="width: 300px;"><div class="item-5">
@@ -306,7 +303,7 @@
 					<p style="color: green">Success</p>
 					
 				</div>
-		  </div></div></div>
+		  </div></div></div> -->
 <!-- <div class="slider-navigation-previous">
 	<svg viewBox="0 0 50 80" xml:space="preserve">
 <polyline fill="currentColor" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 ">
@@ -565,7 +562,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           	<p>
-				While generative robot policies have demonstrated significant potential in learning complex, multimodal behaviors from demonstrations, they still exhibit diverse failures at deployment-time. Policy steering offers an elegant solution to reducing the chance of failure by using an external verifier to select from low-level actions proposed by an imperfect generative policy. Here, one might hope to use a Vision Language Model (VLM) as a verifier, leveraging its open-world reasoning capabilities. However, off-the-shelf VLMs struggle to understand the consequences of low-level robot actions as they are represented fundamentally differently than the text and images the VLM was trained on. In response, we propose FOREWARN, a novel framework to unlock the potential of VLMs as open-vocabulary verifiers for runtime policy steering. Our key idea is to decouple the VLM’s burden of predicting action outcomes (foresight) from evaluation (forethought). For foresight, we leverage a latent world model to imagine future latent states given diverse low-level action plans. For forethought, we align the VLM with these predicted latent states to reason about the consequences of actions in its native representation—natural language—and effectively filter proposed plans. We validate our framework across diverse robotic manipulation tasks, demonstrating its ability to bridge representational gaps and provide robust, generalizable policy. </p>
+				Policy steering is an emerging way to adapt robot behaviors at deployment-time: a learned verifier analyzes low-level action samples proposed by a pre-trained policy (e.g., diffusion policy) and selects only those aligned with the task. While Vision-Language Models (VLMs) are promising general-purpose verifiers due to their reasoning capabilities, existing frameworks often assume these models are well-calibrated. In practice, the overconfident judgment from VLM can degrade the steering performance under both high-level semantic uncertainty in task specifications and low-level action uncertainty or incapability of the pre-trained policy. We propose <em>uncertainty-aware policy steering</em> (UPS), a framework that jointly reasons about semantic task uncertainty and low-level action feasibility, and selects an uncertainty resolution strategy: execute a high-confidence action, clarify task ambiguity via natural language queries, or ask for action interventions to correct the low-level policy when it is deemed incapable at the task. We leverage conformal prediction to calibrate the composition of the VLM and the pre-trained base policy, providing statistical assurances that the verifier selects the correct strategy. After collecting interventions during deployment, we employ residual learning to improve the capability of the pre-trained policy, enabling the system to learn continually but with minimal expensive human feedback. We demonstrate our framework through experiments in simulation and on hardware, showing that UPS can disentangle confident, ambiguous, and incapable scenarios and minimizes expensive user interventions compared to uncalibrated baselines and prior human- or robot-gated continual learning approaches. </p>
         </div>
       </div>
     </div>
@@ -577,8 +574,7 @@
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-	  	<h2 class="title is-3"><span class="dnerf"> FOREWARN</span></h2>
-		<h3 class="title is-4"> <span class="dnerf">Filtering Options via REpresenting World-model Action Rollouts via Narration </span> </h3>
+	  	<h2 class="title is-3"><span class="dnerf">UPS: Uncertainty-aware Policy Steering</span></h2>
 	  	<br>
 		<img src="static/figures/method.png" alt="Method Figure">
 		<br><br>
@@ -627,28 +623,30 @@ select action plans at runtime that are most appropriate for new task contexts a
 	 <div class="container is-max-desktop">
 	  <div class="columns">
 		<div class="column is-four-fifths">
-		  <h2 class="title is-3">Real World Results</h2>
+		  <h2 class="title is-3">Simulation and Real World Results</h2>
 		</div>
 		</div>
 	  </div>
 	  <div class="container is-max-desktop">
 	  <div class ="columns ">
 		<div class="column is-full-width" style="margin-top: 20px;">
-			<h3 class="title is-4">Qualitative Results for Behavior Narration</h3>
+			<h3 class="title is-4">Quantitative Results for Conformal Prediction</h3>
 			<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-			 <p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> FOREWARN </span> : our proposed method using the world model for predicting the latent states of the future and finetuned VLM for generating behavior narrations.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> FOREWARN-Oracle </span>: an upper-bound on our approach's
-				performance assuming access to ground-truth future observations (instead of relying on
-				the latent dynamics to predict future outcomes).<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5">VLM-Act </span>: directly fine-tuning the original Llama-3.2-11B-Vision-Instruct model to generate behavior narrations end-to-end from current observation and an action plan(represented as text), without explicitly predicting outcomes with a world model. <br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca">VLM-Img </span>: using a GPT-4o to generate behavior narrations in a zero-shot manner from the predicted visual observations from the world model.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> VLM-Img-Oracle </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
+			 <p><span style="font-weight: bold;font-size: 20px"> Score Functions </span><br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> Bayesian Intent (Ours) </span> : First queries the VLM to hypothesize a set of potential human intents and asks the VLM to score each of these potential intents based on the user's instruction. 
+				Then, given a specific intent, query the VLM to estimate the likelihood of each behavior narration and marginalize over these quantities.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> Chain-of-Thought Reasoning (CoT) </span>: First asks the VLM to reason about the instruction, then generate the probabilities for each behavior narration conditioned on this reasoning. <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5"> Vanilla </span>: Asks the VLM to directly self-generate the probabilities for each behavior narration. <br>
 				<br>
-				On the left are videos of the ground-truth observations. On the right are the prompt used for querying and the generated behavior narrations. Only
-				<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span> and
-						   <span id="text" style="font-weight: bold;font-size: 15px;color:#a54c00"> FOREWARN-Oracle </span>  consistently produce accurate outcome narrations, effectively capturing nuanced motion details. In contrast, the baselines frequently hallucinate or fail to
-				capture critical contact details between the gripper and objects.
+				<span style="font-weight: bold;font-size: 20px"> Uncertainty Quantification Approaches </span><br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca">Conformal Prediction (CP) </span>: using a GPT-4o to generate behavior narrations in a zero-shot manner from the predicted visual observations from the world model.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> SimpleSet </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> Adaptive Prediction Set (APS) </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
+				<br>
+				<!-- The coverage rate is the proportion of test samples whose ground-truth option(s) are included in the prediction set. 
+				The clarification rate is the proportion of samples in which the prediction set is non-singleton and thus the robot asks the human a question. 
+				The set size is the size of the prediction set. -->
+				Across both simulation and hardware, when paired with CP, our intent-aware score function achieves higher coverage than baselines in ambiguous and incapable cases. It also selectively seeks clarifications for ambiguous scenarios while avoiding unnecessary requests in straightforward or incapable cases.
 				 <!-- For instance, in the Bag task, <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>, 
 				<span id="text" style="font-weight: bold;font-size: 15px;color:#0d79ca"> VLM-Img </span>, 
 				and <span id="text" style="font-weight: bold;font-size: 15px;color:#233c80"> VLM-Img-Oracle </span>  all hallucinate that the robot is grasping the edge of the
@@ -665,7 +663,7 @@ select action plans at runtime that are most appropriate for new task contexts a
 			   <!-- Right column (video) - smaller width -->
 			   <div class ="columns is-centered has-text-centered">
 				<div class="column is-four-fifths">
-					<h4 class="title is-5">Cup Task</h4>
+					<!-- <h4 class="title is-5">Cup Task</h4> -->
 
 					<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
 				  <!-- <p> -->
@@ -674,27 +672,33 @@ select action plans at runtime that are most appropriate for new task contexts a
 				</div>
 			   <div class="columns">
 				
-				<div class="column is-one-third has-text-centered">
-				<video
+				<div class="column is-one-half has-text-centered">
+				<!-- <video
 				style="width: 60%;"
 				autoplay
 				loop
 				muted
 				playsinlines
 				controls
-			  >
-				<source src="static/videos/cup_wrist_bn.mp4" type="video/mp4">
+			  > -->
+			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
+				<img
+					  src="static/figures/hardware_uq_plot.png"
+					  alt="Right image"
+					  style="width: 85%;"
+					/>
+				<!-- <source src="static/videos/cup_wrist_bn.mp4" type="video/mp4"> -->
 				<!-- Fallback text if video unsupported -->
-			  </video>
+			  <!-- </video> -->
 			</div>
 		
 
 				
 				
 				  <!-- Left column (image) - larger width -->
-				<div class="column is-two-thirds has-text-centered">
+				<div class="column is-one-half has-text-centered">
 					<img
-					  src="static/figures/cup_wrist_bn.png"
+					  src="static/figures/sim_uq_plot.png"
 					  alt="Left image"
 					  style="width: 85%;"
 					/>
@@ -702,493 +706,120 @@ select action plans at runtime that are most appropriate for new task contexts a
 				</div>
 			</div>
 			</div>
-			<div class="container is-max-desktop">
-				<!-- Two columns -->
-				 <!-- Right column (video) - smaller width -->
-				 <div class ="columns is-centered has-text-centered">
-				  <div class="column is-four-fifths">
-					  <h4 class="title is-5">Bag Task</h4>
-  
-					  <!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-					<!-- <p> -->
-				  <!-- </p> -->
-				   </div>
-				  </div>
-				 <div class="columns">
-				  
-				  <div class="column is-one-third has-text-centered">
-				  <video
-				  style="width: 60%;"
-				  autoplay
-				  loop
-				  muted
-				  playsinlines
-				  controls
-				>
-				  <source src="static/videos/bag_wrist_bn.mp4" type="video/mp4">
-				  <!-- Fallback text if video unsupported -->
-				</video>
-			  </div>
-		  
-  
-				  
-				  
-					<!-- Left column (image) - larger width -->
-				  <div class="column is-two-thirds has-text-centered">
-					  <img
-						src="static/figures/bag_wrist_bn.png"
-						alt="Left image"
-						style="width: 85%;"
-					  />
-			  
-				  </div>
-			  </div>
-			  </div>
 		  <!-- </section> -->
 		  
 		<div class="container is-max-desktop">
 			
 		<div class ="columns">
 			<div class="column is-full-width" style="margin-top: 100px;">
-				<h3 class="title is-4">Quantitative Results for Behavior Narration</h3>
+				<h3 class="title is-4">Quantitative Results for Continual Learning</h3>
 				<div class="container is-max-desktop">
-					<p>We conduct experiments to show the alignment between predicted behavior narrations from different methods and ground-truth narrations. 
-						<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-						outperforms all baselines across both tasks and achieves performance comparable to
-						 <span id="text" style="font-weight: bold;font-size: 15px;color:#a54c00"> FOREWARN-Oracle </span> , 
-						 which has access to ground-truth action outcomes and represents the upper bound for our approach. 
-		</p>
-	  <img src="static/figures/behavior_narration.png" alt="behavior narration" style="width: 100%;"> 
-	</div>
-				<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-			  <!-- <p> -->
-			<!-- </p> -->
-			 </div>
-			</div>
-			</div>
-		<div class="container is-max-desktop">
-	  <div class ="columns">
-		<div class="column is-full-width" style="margin-top: 100px;">
-			<h3 class="title is-4">Qualitative Results for Policy Steering</h3>
-			<p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> FOREWARN </span> : our proposed method that (1)predicts the action outcomes with the world model in latent space; (2)generates behavior narrations with finetuned VLM from latent states of the future; (3)selects the best action plan using the same VLM based on the task description and narrations.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5">VLM-Act </span>: directly finetuning the VLM to generate behavior narrations from observations and the action plans without explicit world model while keeping (3) same as our method. <br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#724F8F">VLM-DynLat-Category </span>: keeping (1) similar to our method while directly finetuning VLM to generate a set of indices for valid action plans based on task descriptions and predicted latent states of the future, combining (2) and (3) together.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#CE5C7C">Classifier-Dyn-Latent </span>: similar to <span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span> but using a learned classifier instead a VLM to predict success/failure for each plan and randomly select from the successful plans.<br>
-				
+				<p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> Base Policy </span> : First queries the VLM to hypothesize a set of potential human intents and asks the VLM to score each of these potential intents based on the user's instruction. 
+				Then, given a specific intent, query the VLM to estimate the likelihood of each behavior narration and marginalize over these quantities.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> Human-Gated (HG) DAgger </span>: First asks the VLM to reason about the instruction, then generate the probabilities for each behavior narration conditioned on this reasoning. <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5"> EnsembleDAgger </span>: Asks the VLM to directly self-generate the probabilities for each behavior narration. <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca"> FOREWARN </span>: using a GPT-4o to generate behavior narrations in a zero-shot manner from the predicted visual observations from the world model.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> UPS w/ Clarification </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> UPS w/ Clarification + Residual (Ours) </span>: an upper-bound on the performance of VLM-Img, assuming access to ground-truth visual observations.<br>
 				<br>
-				Our results demonstrate that <span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>  can effectively steer the policy towards safe and aligned behavior modes by leverging the VLM as an interpreter and evaluator of predicted latent action outcomes. It outperforms <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span> in all tasks and <span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span> as well as <span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span> in novel task descriptions (not seen during training). </p>
-			<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-		  <!-- <p> -->
-		<!-- </p> -->
-		 <p></p>
-		 </div>
-		</div>
-		</div>
-		<div calss ="columns is-centered has-text-centered">
-			<div class="column is-one-fifths">
-				<!-- <h3 class="title is-5">Task Scenario 1</h3> -->
-				<div class="container is-fluid" style="text-align: center;">
-	  <img src="static/figures/cup_task.png" alt="Task Scenario 1" style="width: 80%;">
+				<!-- The coverage rate is the proportion of test samples whose ground-truth option(s) are included in the prediction set. 
+				The clarification rate is the proportion of samples in which the prediction set is non-singleton and thus the robot asks the human a question. 
+				The set size is the size of the prediction set. -->
+				Across both simulation and hardware, when paired with CP, our intent-aware score function achieves higher coverage than baselines in ambiguous and incapable cases. It also selectively seeks clarifications for ambiguous scenarios while avoiding unnecessary requests in straightforward or incapable cases.
+				 <!-- For instance, in the Bag task, <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>, 
+				<span id="text" style="font-weight: bold;font-size: 15px;color:#0d79ca"> VLM-Img </span>, 
+				and <span id="text" style="font-weight: bold;font-size: 15px;color:#233c80"> VLM-Img-Oracle </span>  all hallucinate that the robot is grasping the edge of the
+				bag, whereas it is actually grasping the middle. -->
+			</p>
+	  <img src="static/figures/success_rate.png" alt="behavior narration" style="width: 100%;"> 
 	</div>
 				<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
 			  <!-- <p> -->
 			<!-- </p> -->
 			 </div>
 			</div>
+			</div>
 
-	  <div class="columns">
-		
-		<!-- Column 1 -->
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
 
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/base_policy.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		<!-- Column 2 -->
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
 
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/forewarn.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		<!-- Column 3 -->
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/vlmact.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		<!-- Column 4 -->
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/vlm_dynlat_cat.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-		<!-- Column 5 -->
-		<div class="column is-one-fifth has-text-centered">
-			<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-		  <video
-			autoplay
-			loop
-			muted
-			playsinline
-			controls
-			width="100%"
-			style="border-radius: 10px;">
-			<source src="static/videos/real_world_results/cup_handle/classifier_dyn_lat.mp4" type="video/mp4">
-		  </video>
-		</div>
-		
-	  </div>
-	  
-  
-	<!-- </div> -->
-	<div calss ="columns is-centered has-text-centered">
-		<div class="column is-one-fifths">
-			<!-- <h3 class="title is-5">Task Scenario 1</h3> -->
-			<div class="container is-fluid" style="text-align: center;">
-  <img src="static/figures/bag_task.png" alt="Task Scenario 2" style="width: 80%;">
 </div>
+</div>
+<br><br><br>
+<div class="container is-max-desktop">
+	  <div class ="columns ">
+		<div class="column is-full-width" style="margin-top: 20px;">
+			<h3 class="title is-4">Qualitative Results</h3>
 			<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
 		  <!-- <p> -->
 		<!-- </p> -->
 		 </div>
 		</div>
-  <div class="columns">
-	
-	<!-- Column 1 -->
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
+		</div>
+		<!-- <section class="section"> -->
+			<div class="container is-max-desktop">
+			  <!-- Two columns -->
+			   <!-- Right column (video) - smaller width -->
+			   <div class ="columns is-centered has-text-centered">
+				<div class="column is-four-fifths">
+					<!-- <h4 class="title is-5">Cup Task</h4> -->
 
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/base_policy.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	<!-- Column 2 -->
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
+					<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
+				  <!-- <p> -->
+				<!-- </p> -->
+				 </div>
+				</div>
+			   <div class="columns">
+				
+				<div class="column is-one-half has-text-centered">
+				<!-- <video
+				style="width: 60%;"
+				autoplay
+				loop
+				muted
+				playsinlines
+				controls
+			  > -->
+			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
+			<video id="straightforward-sim" controls autoplay muted loop playsinline width="85%">
+				<source src="./static/videos/sim_results/straightforward_sim.mp4"
+						type="video/mp4">
+			</video>
+			<video id="ambiguous-sim" controls autoplay muted loop playsinline width="85%">
+				<source src="./static/videos/sim_results/ambiguous_sim.mp4"
+						type="video/mp4">
+			</video>
+			<video id="incapable-sim" controls autoplay muted loop playsinline width="85%">
+				<source src="./static/videos/sim_results/incapable_sim.mp4"
+						type="video/mp4">
+			</video>
+				<!-- Fallback text if video unsupported -->
+			  <!-- </video> -->
+			</div>
+		
 
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/forewarn.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	<!-- Column 3 -->
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/vlmact.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	<!-- Column 4 -->
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/vlm_dynlat_cat.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-	<!-- Column 5 -->
-	<div class="column is-one-fifth has-text-centered">
-		<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-	  <video
-		autoplay
-		loop
-		muted
-		playsinline
-		controls
-		width="100%"
-		style="border-radius: 10px;">
-		<source src="static/videos/real_world_results/bag_edge/classifier_dyn_lat.mp4" type="video/mp4">
-	  </video>
-	</div>
-	
-  </div>
-
-  <div calss ="columns is-centered has-text-centered">
-	<div class="column is-one-fifths">
-		<!-- <h3 class="title is-5">Task Scenario 1</h3> -->
-		<div class="container is-fluid" style="text-align: center;">
-<img src="static/figures/cup_new.png" alt="Task Scenario 3" style="width: 80%;"> 
-</div>
-		<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-	  <!-- <p> -->
-	<!-- </p> -->
-	 </div>
-	</div>
-<div class="columns">
-
-<!-- Column 1 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/base_policy.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 2 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/forewarn.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 3 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/vlmact.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 4 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/vlm_dynlat_cat.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 5 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/cup_rim/classifier_dyn_lat.mp4" type="video/mp4">
-  </video>
-</div>
-
-</div>
-<div calss ="columns is-centered has-text-centered">
-	<div class="column is-one-fifths">
-		<!-- <h3 class="title is-5">Task Scenario 1</h3> -->
-		<div class="container is-fluid" style="text-align: center;">
-<img src="static/figures/bag_new.png" alt="Task Scenario 4" style="width: 80%;">
-</div>
-		<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
-	  <!-- <p> -->
-	<!-- </p> -->
-	 </div>
-	</div>
-<div class="columns">
-
-<!-- Column 1 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#000000"> Base Policy </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/base_policy.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 2 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#FF9300"> FOREWARN </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/forewarn.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 3 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/vlmact.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 4 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#724F8F">VLM-DynLat-Category </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/vlm_dynlat_cat.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Column 5 -->
-<div class="column is-one-fifth has-text-centered">
-	<span id="text" style="font-weight: bold;font-size: 15px;color:#CE5C7C">Classifier-Dyn-Latent </span>
-
-  <video
-	autoplay
-	loop
-	muted
-	playsinline
-	controls
-	width="100%"
-	style="border-radius: 10px;">
-	<source src="static/videos/real_world_results/bag_middle/classifier_dyn_lat.mp4" type="video/mp4">
-  </video>
-</div>
-
-</div>
-</div>
-<div class="container is-max-desktop">
-	<div class="columns">
-	<div class="column is-four-fifths" style="margin-top: 100px;">
-		<h3 class="title is-4">Quantitative Results for Policy Steering</h3>
-	 </div>
-	</div>
-	<!-- add video  -->
-	<div style="text-align: center;">
-		<video 
-		  style="width: 90%;" 
-		  controls
-		  autoplay 
-		  loop 
-		  muted 
-		  playsinline
-		>
-		  <source src="static/videos/policy_steering_quantitativre.mp4" type="video/mp4">
-		  <!-- Fallback text if the browser doesn't support <video> -->
+				
+				
+				  <!-- Left column (image) - larger width -->
+				<div class="column is-one-half has-text-centered">
+				<video id="straightforward-hardware" controls autoplay muted loop playsinline width="85%">
+					<source src="./static/videos/hardware_results/straightforward_hardware.mp4"
+							type="video/mp4">
+				</video>
+				<video id="ambiguous-hardware" controls autoplay muted loop playsinline width="85%">
+					<source src="./static/videos/hardware_results/ambigous_hardware.mp4"
+							type="video/mp4">
+				</video>
+				<video id="incapable-hardware" controls autoplay muted loop playsinline width="85%">
+					<source src="./static/videos/hardware_results/incapable_hardware.mp4"
+							type="video/mp4">
+				</video>
+			
+				</div>
+			</div>
+			</div>
+		  <!-- </section> -->
 		  
-		</video>
-	  </div>
-	</div>
 	
   </section>
   
@@ -1244,7 +875,7 @@ select action plans at runtime that are most appropriate for new task contexts a
 
 	
 <!-- real robot failures-->
-<section class="section">
+<!-- <section class="section">
 	<div class="container is-max-desktop">
 	<div class="columns">
 		<h3 class="title is-4"> Failure Modes </h3>
@@ -1290,7 +921,7 @@ select action plans at runtime that are most appropriate for new task contexts a
 				type="video/mp4">
 	</video> 
 <!--	<embed type="text/html" src="./static/demos/failure/failure-1.html" width="35%" height="500" id="real_plot_failure">-->
-</div>
+</div> -->
 <br> <br>
 
 <!-- <section class="section">
@@ -1355,14 +986,10 @@ select action plans at runtime that are most appropriate for new task contexts a
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{wu2025foresight,
-  title={From foresight to forethought: Vlm-in-the-loop policy steering via latent alignment},
-  author={Wu, Yilin and Tian, Ran and Swamy, Gokul and Bajcsy, Andrea},
-  journal={Robotics: Science and Systems (RSS)},
-  year={2025}
+    <pre><code> # TODO
 
   
-}</code></pre>
+</code></pre>
   </div>
 </section>
 

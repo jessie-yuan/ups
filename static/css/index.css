@@ -24,7 +24,7 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: Helvetica Neue, Helvetica, Verdana, sans-serif, 'Lato';
 }
 
 
@@ -48,11 +48,11 @@ body {
 }
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+    font-family: Helvetica Neue, Helvetica, Verdana, sans-serif, 'Lato';
 }
 
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+    font-family: Helvetica Neue, Helvetica, Verdana, sans-serif, 'Lato';
 }
 
 .publication-venue {
