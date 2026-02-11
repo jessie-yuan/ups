@@ -183,7 +183,7 @@
       </video>
 		<br>
       <h2 class="subtitle has-text-centered">
-        Our method <span class="dnerf">FOREWARN</span> proposes a VLM-in-the-loop policy steering system to improve multi-modal generative policy's performance during deployment without retraining.
+        Our method <span class="dnerf">UPS</span> addresses VLM verifier overconfidence in policy steering by quantifying its uncertainty to distinguish semantic task uncertainty from low-level action feasibility and select an appropriate uncertainty resolution strategy: executing a high-confidence action, asking a clarifying question about the task, or requesting demonstrations to retrain the low-level policy.
       </h2>
     </div>
   </div>
@@ -579,10 +579,9 @@
 		<img src="static/figures/method.png" alt="Method Figure">
 		<br><br>
 		<p>
-			We present our method FOREWARN, an VLM-in-the-loop policy steering algorithm for multi-modal generative robot policies.
-Our key idea is to decouple the VLM’s burden of predicting action outcomes from evaluation. By predicting action outcomes
-with a pre-trained latent dynamics model and aligning a VLM to reason about these latent states in text, FOREWARN can
-select action plans at runtime that are most appropriate for new task contexts and user needs.
+			Our framework calibrates the VLM verifier used for policy steering via conformal
+prediction. This enables the VLM to select an appropriate way to resolve uncertainty, from querying the end-user in natural
+language to asking to re-train the low-level control policy.
 		</p>
 	</div>
 		
