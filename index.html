@@ -632,15 +632,15 @@ language to asking to re-train the low-level control policy.
 			<h3 class="title is-4">Quantitative Results for Conformal Prediction</h3>
 			<!-- <p>We demonstrate real-world deployments of our system across various tasks.</p> -->
 			 <p><span style="font-weight: bold;font-size: 20px"> Score Functions </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> Bayesian Intent (Ours) </span> : First queries the VLM to hypothesize a set of potential human intents and asks the VLM to score each of these potential intents based on the user's instruction. 
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#fd994e"> Bayesian Intent (Ours) </span> : First queries the VLM to hypothesize a set of potential human intents and asks the VLM to score each of these potential intents based on the user's instruction. 
 				Then, given a specific intent, query the VLM to estimate the likelihood of each behavior narration and marginalize over these quantities.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> Chain-of-Thought Reasoning (CoT) </span>: First asks the VLM to reason about the instruction, then generate the probabilities for each behavior narration conditioned on this reasoning. <br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5"> Vanilla </span>: Asks the VLM to directly self-generate the probabilities for each behavior narration. <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#85cc84"> Chain-of-Thought Reasoning (CoT) </span>: First asks the VLM to reason about the instruction, then generate the probabilities for each behavior narration conditioned on this reasoning. <br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#7fb8da"> Vanilla </span>: Asks the VLM to directly self-generate the probabilities for each behavior narration. <br>
 				<br>
 				<span style="font-weight: bold;font-size: 20px"> Uncertainty Quantification Approaches </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca">Conformal Prediction (CP) </span>: Forms a prediction set by comparing the probabilities of each individual option with a calibrated threshold, 1 - qhat.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> SimpleSet </span>: Sorts the options from high probability to low and adds them to the prediction set until their sum exceeds the uncalibrated threshold 1 - epsilon.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> Adaptive Prediction Set (APS) </span>: Sorts the options from high probability to low and adds them to the prediction set until their sum exceeds a calibrated threshold, 1 - qhat.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#bfbfbf"> SimpleSet </span>: Sorts the options from high probability to low and adds them to the prediction set until their sum exceeds the uncalibrated threshold 1 - epsilon.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#8c8c8d"> Adaptive Prediction Set (APS) </span>: Sorts the options from high probability to low and adds them to the prediction set until their sum exceeds a calibrated threshold, 1 - qhat.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#606061">Conformal Prediction (CP) </span>: Forms a prediction set by comparing the probabilities of each individual option with a calibrated threshold, 1 - qhat.<br>
 				<br>
 				<!-- The coverage rate is the proportion of test samples whose ground-truth option(s) are included in the prediction set. 
 				The clarification rate is the proportion of samples in which the prediction set is non-singleton and thus the robot asks the human a question. 
@@ -714,17 +714,17 @@ language to asking to re-train the low-level control policy.
 				<h3 class="title is-4">Quantitative Results for Continual Learning</h3>
 				<div class="container is-max-desktop">
 				<p><span style="font-weight: bold;font-size: 20px"> Baselines </span><br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#FF9300"> Base Policy </span> : Unaltered base diffusion policy.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#a54c00"> Human-Gated (HG) DAgger + Residual </span>: Base diffusion policy + residual policy trained on human-gated interventions.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#26A6D5"> EnsembleDAgger </span>: Base diffusion policy + residual policy trained on interventions collected by querying human demonstrator whenever an ensemble of diffusion policies disagrees.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#0d79ca"> FOREWARN </span>: UPS with base diffusion policy alone and without uncertainty quantification; queries the VLM verifier to select the best behavior narration without conformal prediction or asking clarifying questions.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> UPS w/ Clarification </span>: UPS with base diffusion policy alone.<br>
-				<span id="text" style="font-weight: bold;font-size: 18px;color:#233c80"> UPS w/ Clarification + Residual (Ours) </span>: UPS with base diffusion policy + residual policy trained from prior incapable scenarios.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#959595"> Base Policy </span> : Unaltered base diffusion policy.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#b6b6d8"> Human-Gated (HG) DAgger + Residual </span>: Base diffusion policy + residual policy trained on human-gated interventions.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#8682bc"> EnsembleDAgger </span>: Base diffusion policy + residual policy trained on interventions collected by querying human demonstrator whenever an ensemble of diffusion policies disagrees.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#fdcfa1"> FOREWARN </span>: UPS with base diffusion policy alone and without uncertainty quantification; queries the VLM verifier to select the best behavior narration without conformal prediction or asking clarifying questions.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#fd994e"> UPS w/ Clarification </span>: UPS with base diffusion policy alone.<br>
+				<span id="text" style="font-weight: bold;font-size: 18px;color:#f16a14"> UPS w/ Clarification + Residual (Ours) </span>: UPS with base diffusion policy + residual policy trained from prior incapable scenarios.<br>
 				<br>
 				<!-- The coverage rate is the proportion of test samples whose ground-truth option(s) are included in the prediction set. 
 				The clarification rate is the proportion of samples in which the prediction set is non-singleton and thus the robot asks the human a question. 
 				The set size is the size of the prediction set. -->
-				By calibrating uncertainty and strategically asking for clarifications, our approach improves success rate over the base policy in ambiguous cases. By combining our uncertainty quantification approach with three targeted resolution strategies (execute, clarify, re-train), our approach improves performance after residual training.
+				By calibrating uncertainty and strategically asking for clarifications, our approach improves success rate over the base policy in ambiguous cases. Additionally, by combining our uncertainty quantification approach with three targeted resolution strategies (execute, clarify, re-train), our approach improves performance after residual training.
 				 <!-- For instance, in the Bag task, <span id="text" style="font-weight: bold;font-size: 15px;color:#26A6D5">VLM-Act </span>, 
 				<span id="text" style="font-weight: bold;font-size: 15px;color:#0d79ca"> VLM-Img </span>, 
 				and <span id="text" style="font-weight: bold;font-size: 15px;color:#233c80"> VLM-Img-Oracle </span>  all hallucinate that the robot is grasping the edge of the
