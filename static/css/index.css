@@ -3,6 +3,11 @@ body {
 }
 
 
+.footer {
+  background-color: white;
+  padding: 1rem 1.5rem;
+}
+
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -121,6 +126,12 @@ body {
   border-radius: 10px;
   padding: 0;
   font-size: 0;
+}
+
+.results-carousel .item p {
+  font-size: 1rem;
+  padding: 8px;
+  margin: 0;
 }
 
 .results-carousel video {

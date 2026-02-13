@@ -106,7 +106,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering</h1>
+          <h1 class="title is-1 publication-title">When to Act, Ask, or Learn: <br>Uncertainty-Aware Policy Steering</h1>
           <h1 class="title is-5 publication-title">In Submission</h1>
 		  <div class="is-size-5 publication-authors">
 			<span class="author-block">
@@ -159,9 +159,10 @@
                 type="video/mp4">
       </video>
 		<br>
-      <h2 class="subtitle has-text-centered">
+      <p class="has-text-centered">
+		<br>
         Our method <span class="dnerf">UPS</span> addresses VLM verifier overconfidence in policy steering by quantifying its uncertainty to distinguish semantic task uncertainty from low-level action feasibility and select an appropriate uncertainty resolution strategy: executing a high-confidence action, asking a clarifying question about the task, or requesting demonstrations to retrain the low-level policy.
-      </h2>
+      </p>
     </div>
   </div>
 </section>
@@ -177,51 +178,75 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
+            <source src="./static/videos/opening_carousel/base_straightforward.mp4"
                     type="video/mp4">
           </video>
+          <p>
+			User instruction: "On the right side, there is a bin -- place the cup there" <br>
+			Scenario category: Straightforward <br>
+			Method: Base policy alone
+		  </p>
+		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
+            <source src="./static/videos/opening_carousel/ups_straightforward.mp4"
                     type="video/mp4">
           </video>
+          <p>
+			User instruction: "The right side of the table has a bin -- can you put the cup there?" <br>
+			Scenario category: Straightforward <br>
+			Method: UPS
+		  </p>
+		  <p style="color: green">Outcome: Success</p>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
+            <source src="./static/videos/opening_carousel/base_ambiguous.mp4"
                     type="video/mp4">
           </video>
+            <p>
+			User instruction: "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
+			Scenario category: Ambiguous (intention: left) <br>
+			Method: Base policy alone
+		  </p>
+		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
+            <source src="./static/videos/opening_carousel/ups_ambiguous.mp4"
                     type="video/mp4">
           </video>
+                      <p>
+			User instruction: "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
+			Scenario category: Ambiguous (intention: left) <br>
+			Method: UPS
+		  </p>
+		  <p style="color: green">Outcome: Success</p>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
+            <source src="./static/videos/opening_carousel/base_incapable.mp4"
                     type="video/mp4">
           </video>
+        <p>
+			User instruction: "Could you move the cup to the bin on the right side?" <br>
+			Scenario category: Incapable <br>
+			Method: Base policy alone
+		  </p>
+		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-mask">
           <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
+            <source src="./static/videos/opening_carousel/ups_incapable.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+          <p>
+			User instruction: "Ensure the cup is inside the right bin." <br>
+			Scenario category: Incapable <br>
+			Method: UPS
+		  </p>
+		  <p style="color: green">Outcome: Success</p>
         </div>
       </div>
     </div>
@@ -545,8 +570,8 @@ language to asking to re-train the low-level control policy.
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-          <p>
-            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+          <p class="has-text-centered">
+            Website template adapted from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
 			</p>
         </div>
       </div>
