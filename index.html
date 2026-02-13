@@ -126,7 +126,7 @@
 		  <div class="column has-text-centered">
             <div class="publication-links">
 				<span class="link-block">
-					<a href="https://arxiv.org/abs/2502.01828"
+					<a href="https://jessie-yuan.github.io/ups/index.html"
 						class="external-link button is-normal is-rounded is-dark">
 						<span class="icon">
 							<i class="ai ai-arxiv"></i>
@@ -134,7 +134,7 @@
 						<span>arXiv</span>
 					</a>
 					</span>
-				<span class="link-block">
+				<!-- <span class="link-block">
 				<a href="https://github.com/CMU-IntentLab/Forewarn/tree/main"
 					class="external-link button is-normal is-rounded is-dark">
 					<span class="icon">
@@ -142,8 +142,9 @@
 					</span>
 					<span>Code</span>
 					</a>
-				</span>
+				</span> -->
             </div>
+		Code coming soon!
 
         </div>
       </div>
@@ -181,60 +182,60 @@
             <source src="./static/videos/opening_carousel/base_straightforward.mp4"
                     type="video/mp4">
           </video>
-          <p>
-			User instruction: "On the right side, there is a bin -- place the cup there" <br>
-			Scenario category: Straightforward <br>
-			Method: Base policy alone
+		  <p>
+			<strong>Method:</strong> <span style="color: #959595">Base policy alone</span><br>
+			<strong>Scenario category:</strong> Straightforward<br>
+			<strong>User instruction:</strong> "On the left side, there is a bin -- place the cup there." <br>
+		  	<strong>Outcome:</strong> <span style="color: red">Failure</span>
 		  </p>
-		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/opening_carousel/ups_straightforward.mp4"
                     type="video/mp4">
           </video>
-          <p>
-			User instruction: "The right side of the table has a bin -- can you put the cup there?" <br>
-			Scenario category: Straightforward <br>
-			Method: UPS
+		  <p>
+			<strong>Method:</strong> <span style="color: #f16a14">UPS</span><br>
+			<strong>Scenario category:</strong> Straightforward<br>
+			<strong>User instruction:</strong> "The right side of the table has a bin -- can you put the cup there?"<br>
+		  	<strong>Outcome:</strong> <span style="color: green">Success</span>
 		  </p>
-		  <p style="color: green">Outcome: Success</p>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/opening_carousel/base_ambiguous.mp4"
                     type="video/mp4">
           </video>
-            <p>
-			User instruction: "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
-			Scenario category: Ambiguous (intention: left) <br>
-			Method: Base policy alone
+		  <p>
+			<strong>Method:</strong> <span style="color: #959595">Base policy alone</span><br>
+			<strong>Scenario category:</strong> Ambiguous (intention: left)<br>
+			<strong>User instruction:</strong> "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
+		  	<strong>Outcome:</strong> <span style="color: red">Failure</span>
 		  </p>
-		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-fullbody">
           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/opening_carousel/ups_ambiguous.mp4"
                     type="video/mp4">
           </video>
-                      <p>
-			User instruction: "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
-			Scenario category: Ambiguous (intention: left) <br>
-			Method: UPS
+		  <p>
+			<strong>Method:</strong> <span style="color: #f16a14">UPS</span><br>
+			<strong>Scenario category:</strong> Ambiguous (intention: left)<br>
+			<strong>User instruction:</strong> "Put the nut on the peg so that its handle faces my dominant-hand side." <br>
+		  	<strong>Outcome:</strong> <span style="color: green">Success</span>
 		  </p>
-		  <p style="color: green">Outcome: Success</p>
         </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/opening_carousel/base_incapable.mp4"
                     type="video/mp4">
           </video>
-        <p>
-			User instruction: "Could you move the cup to the bin on the right side?" <br>
-			Scenario category: Incapable <br>
-			Method: Base policy alone
+		  <p>
+			<strong>Method:</strong> <span style="color: #959595">Base policy alone</span><br>
+			<strong>Scenario category:</strong> Incapable <br>
+			<strong>User instruction:</strong> "Could you move the cup to the bin on the right side?" <br>
+		  	<strong>Outcome:</strong> <span style="color: red">Failure</span>
 		  </p>
-		  <p style="color: red">Outcome: Failure</p>
         </div>
         <div class="item item-mask">
           <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
@@ -242,11 +243,11 @@
                     type="video/mp4">
           </video>
           <p>
-			User instruction: "Ensure the cup is inside the right bin." <br>
-			Scenario category: Incapable <br>
-			Method: UPS
+			<strong>Method:</strong> <span style="color: #f16a14">UPS</span><br>
+			<strong>Scenario category:</strong> Incapable <br>
+			<strong>User instruction:</strong> "Ensure the cup is inside the right bin." <br>
+		  	<strong>Outcome:</strong> <span style="color: green">Success</span>
 		  </p>
-		  <p style="color: green">Outcome: Success</p>
         </div>
       </div>
     </div>
