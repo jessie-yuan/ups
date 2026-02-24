@@ -4,7 +4,7 @@ import imageio
 input_path = "video_incapable.mp4"
 output_path = "video_incapable_bordered.mp4"
 border_frames = range(119, 136)  # frames 119-135 inclusive
-border_thickness = 40
+border_thickness = 60
 border_color = (0, 0, 255)  # BGR red
 
 cap = cv2.VideoCapture(input_path)
