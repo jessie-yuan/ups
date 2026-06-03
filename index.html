@@ -134,17 +134,16 @@
 						<span>arXiv</span>
 					</a>
 					</span>
-				<!-- <span class="link-block">
-				<a href="https://github.com/CMU-IntentLab/Forewarn/tree/main"
+				<span class="link-block">
+				<a href="https://github.com/CMU-IntentLab/uncertainty_aware_policy_steering"
 					class="external-link button is-normal is-rounded is-dark">
 					<span class="icon">
 						<i class="fab fa-github"></i>
 					</span>
 					<span>Code</span>
 					</a>
-				</span> -->
+				</span>
             </div>
-		Code coming soon!
 
         </div>
       </div>
@@ -446,8 +445,17 @@ language to asking to re-train the low-level control policy.
 				 </div>
 				</div>
 			   <div class="columns">
+
+			<div class="column is-one-third has-text-centered">
+					<img
+					  src="static/figures/sim_uq_plot.png"
+					  alt="Left image"
+					  style="width: 98%;"
+					/>
+			
+				</div>
 				
-				<div class="column is-one-half has-text-centered">
+			<div class="column is-one-third has-text-centered">
 				<!-- <video
 				style="width: 60%;"
 				autoplay
@@ -458,9 +466,9 @@ language to asking to re-train the low-level control policy.
 			  > -->
 			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
 				<img
-					  src="static/figures/hardware_uq_plot.png"
+					  src="static/figures/hw_cup_uq_plot.png"
 					  alt="Right image"
-					  style="width: 85%;"
+					  style="width: 98%;"
 					/>
 				<!-- <source src="static/videos/cup_wrist_bn.mp4" type="video/mp4"> -->
 				<!-- Fallback text if video unsupported -->
@@ -471,11 +479,11 @@ language to asking to re-train the low-level control policy.
 				
 				
 				  <!-- Left column (image) - larger width -->
-				<div class="column is-one-half has-text-centered">
+				<div class="column is-one-third has-text-centered">
 					<img
-					  src="static/figures/sim_uq_plot.png"
+					  src="static/figures/hw_block_uq_plot.png"
 					  alt="Left image"
-					  style="width: 85%;"
+					  style="width: 98%;"
 					/>
 			
 				</div>
@@ -547,41 +555,9 @@ language to asking to re-train the low-level control policy.
 				 </div>
 				</div>
 			   <div class="columns">
-				
-			<div class="column is-one-half has-text-centered">
-				<!-- <video
-				style="width: 60%;"
-				autoplay
-				loop
-				muted
-				playsinlines
-				controls
-			  > -->
-			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
-			<p>
-			Scenario Category - Hardware: &nbsp; </p>
-			<form method="" action="" name="hardwareObjectForm">
-			<select size="1" name="switch" onchange="switchHardwareVideo();">
-				<option value="0">Straightforward</option>
-				<option value="1">Ambiguous</option>
-				<option value="2">Incapable</option>
-			</select>
-			</form>
-			<br>
 
-			<video id="hardware_video" controls autoplay muted loop playsinline width="85%">
-				<source src="./static/videos/hardware_results/straightforward_hardware.mp4"
-						type="video/mp4">
-			</video>
-				<!-- Fallback text if video unsupported -->
-			  <!-- </video> -->
-			</div>
-		
-
-				
-				
-				  <!-- Left column (image) - larger width -->
-				<div class="column is-one-half has-text-centered">
+							  <!-- Left column (image) - larger width -->
+			<div class="column is-one-third has-text-centered">
 				<!-- <video
 				style="width: 60%;"
 				autoplay
@@ -602,8 +578,68 @@ language to asking to re-train the low-level control policy.
 			</form>
 			<br>
 
-			<video id="sim_video" controls autoplay muted loop playsinline width="85%">
+			<video id="sim_video" controls autoplay muted loop playsinline width="98%">
 				<source src="./static/videos/sim_results/straightforward_sim.mp4"
+						type="video/mp4">
+			</video>
+				<!-- Fallback text if video unsupported -->
+			  <!-- </video> -->
+			</div>
+				
+			<div class="column is-one-third has-text-centered">
+				<!-- <video
+				style="width: 60%;"
+				autoplay
+				loop
+				muted
+				playsinlines
+				controls
+			  > -->
+			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
+			<p>
+			Scenario Category - Hardware (PnP Cup): &nbsp; </p>
+			<form method="" action="" name="hardwareObjectForm">
+			<select size="1" name="switch" onchange="switchHardwareVideo();">
+				<option value="0">Straightforward</option>
+				<option value="1">Ambiguous</option>
+				<option value="2">Incapable</option>
+			</select>
+			</form>
+			<br>
+
+			<video id="hardware_video" controls autoplay muted loop playsinline width="98%">
+				<source src="./static/videos/hardware_results/straightforward_hardware.mp4"
+						type="video/mp4">
+			</video>
+				<!-- Fallback text if video unsupported -->
+			  <!-- </video> -->
+			</div>
+		
+
+				
+				
+				  <!-- Left column (image) - larger width -->
+				<div class="column is-one-third has-text-centered">
+				<!-- <video
+				style="width: 60%;"
+				autoplay
+				loop
+				muted
+				playsinlines
+				controls
+			  > -->
+			   <!-- put image /Users/jessieyuan/Documents/ups/static/images/simulation_uq_plot_color.pdf here -->
+			<p>
+			Scenario Category - Hardware (Insert Block): &nbsp; </p>
+			<form method="" action="" name="simObjectForm">
+			<select size="1" name="switch">
+				<option value="0">Straightforward</option>
+			</select>
+			</form>
+			<br>
+
+			<video id="sim_video" controls autoplay muted loop playsinline width="98%">
+				<source src="./static/videos/hw_block_results/straightforward_hw_block.mp4"
 						type="video/mp4">
 			</video>
 				<!-- Fallback text if video unsupported -->
@@ -620,18 +656,12 @@ language to asking to re-train the low-level control policy.
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code> 
-@misc{yuan2026actasklearnuncertaintyaware,
-    title={When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering}, 
-    author={Jessie Yuan and Yilin Wu and Andrea Bajcsy},
-    year={2026},
-    eprint={2602.22474},
-    archivePrefix={arXiv},
-    primaryClass={cs.RO},
-    url={https://arxiv.org/abs/2602.22474}, 
+    <pre><code>@article{yuan2026ups,
+    title={When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering},
+    author={Yuan, Jessie and Wu, Yilin and Bajcsy, Andrea},
+    journal={Robotics: Science and Systems (RSS)},
+    year={2026}
 }
-
-  
 </code></pre>
   </div>
 </section>
